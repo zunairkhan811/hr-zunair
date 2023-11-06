@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
-
-  # get 'home/index'
-  # get '/home' => 'home#index'
-
   root 'home#index'
+
+  # public pages routes
+
+  get 'about' => 'pages#about_us'
+  get 'contact' => 'pages#contact_us'
+  get 'privacy-policy' => 'pages#privacy_policy'
+  get 'terms-and-conditions' => 'pages#terms_and_conditions'
+  
 end
