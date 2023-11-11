@@ -18,6 +18,15 @@ class EmployeesController < ApplicationController
         @employee = Employee.find(params[:id])
     end
 
+    def update
+        @employee = Employee.find(params[:id])
+        if @employee.update(employee_params)
+            redirect_to employees_path, notice: 'Employee has been updated successfully'
+        else
+            render :edit
+        end
+    end
+
     private
     def employee_params
         params.require(:employee).permit(:first_name, :middle_name, :last_name, :email, :city,:state, :country, :zipcode, :address_line_1, :address_line_2)
