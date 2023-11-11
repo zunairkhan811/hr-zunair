@@ -27,6 +27,11 @@ class EmployeesController < ApplicationController
         end
     end
 
+    def show
+        @employee = Employee.find(params[:id])
+    end
+
+
     private
     def employee_params
         params.require(:employee).permit(:first_name, :middle_name, :last_name, :email, :city,:state, :country, :zipcode, :address_line_1, :address_line_2)

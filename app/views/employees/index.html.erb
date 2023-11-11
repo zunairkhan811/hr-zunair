@@ -23,6 +23,7 @@
                     <td><%= employee.full_address %></td>
                     <td>
                      <%= link_to "Edit", edit_employee_path(employee), class: "btn btn-primary"%>
+                     <%= link_to "View", employee_path(employee), class: "btn btn-info"%>
                     </td>
                 </tr>  
             <% end %>
