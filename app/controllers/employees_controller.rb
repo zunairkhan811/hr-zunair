@@ -31,6 +31,13 @@ class EmployeesController < ApplicationController
         @employee = Employee.find(params[:id])
     end
 
+    def destroy
+        @employee = Employee.find(params[:id])
+        if @employee.destroy
+            redirect_to employees_path, notice: 'Employee has been Deleted successfully'
+        end
+    end
+
 
     private
     def employee_params
