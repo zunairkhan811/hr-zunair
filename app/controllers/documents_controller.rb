@@ -1,11 +1,11 @@
-class DocumentController < ApplicationController
+class DocumentsController < ApplicationController
     before_action :set_document, only: [:edit, :update, :show, :destroy]
 
     def index
-        @documents = Document.all()
+        @documents = Document.all
     end
     def new
-        @document = Document.new()
+        @document = Document.new
     end
     def create
         @document = Document.new(document_params)
