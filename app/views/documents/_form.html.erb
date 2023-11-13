@@ -13,7 +13,7 @@
             <% end %>
             <div class="form-group">
                 <%= form.label "#{:doc_type}(*)", class: "mb-2" %>
-                <%= form.text_field :doc_type, class: "form-control form-control-lg rounded-0" %>
+                <%= form.select :doc_type, options_for_select(Document:: DOC_TYPES, selected: document.doc_type), {prompt: 'Select Document Type'}, {class: 'form-select form-select-lg rounded-0'} %>
             </div>
             <% @document.errors.full_messages_for(:doc_type).each do |message|  %>
                 <p class="text-danger"><%= message %></p>
