@@ -4,6 +4,9 @@
             <h2 class="text-center">Document Details</h2>
             <div class="row mt-4">
                 <div class="col-lg-6">
+                    <% if @document.image.attached? %>
+                    <%= image_tag @document.image, "width": '50%' %>
+                    <% end %>
                     <p class="lead"><strong>Name: </strong><%= @document.name %></p>
                     <p class="lead"><strong>Type: </strong><%= @document.doc_type %></p>
                     <p class="lead"><strong>Employee: </strong><%= @document.employee.name %></p>
